@@ -1,5 +1,8 @@
-package pl.piomin.stock;
+package com.nrapendra.stock;
 
+import com.nrapendra.base.domain.Order;
+import com.nrapendra.stock.repository.ProductRepository;
+import com.nrapendra.stock.service.OrderManageService;
 import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,10 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.annotation.KafkaListener;
-import pl.piomin.base.domain.Order;
-import pl.piomin.stock.domain.Product;
-import pl.piomin.stock.repository.ProductRepository;
-import pl.piomin.stock.service.OrderManageService;
+import com.nrapendra.stock.domain.Product;
 
 import java.util.Random;
 

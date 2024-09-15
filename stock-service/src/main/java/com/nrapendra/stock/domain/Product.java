@@ -1,4 +1,4 @@
-package pl.piomin.stock.domain;
+package com.nrapendra.stock.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,7 +1,5 @@
 package com.nrapendra.stock;
-
 import org.springframework.boot.SpringApplication;
-import pl.piomin.stock.StockApp;
 
 public class StockAppTest {
 

@@ -1,5 +1,7 @@
 package com.nrapendra.stock;
 
+import com.nrapendra.stock.domain.Product;
+import com.nrapendra.stock.repository.ProductRepository;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
@@ -13,10 +15,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.kafka.test.EmbeddedKafkaBroker;
 import org.springframework.kafka.test.context.EmbeddedKafka;
-import pl.piomin.base.domain.Order;
-import pl.piomin.stock.domain.Product;
-import pl.piomin.stock.repository.ProductRepository;
-
+import com.nrapendra.base.domain.Order;
 import java.time.Duration;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -25,7 +24,7 @@ import java.util.concurrent.TimeoutException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@SpringBootTest(properties = {"spring.kafka.consumer.auto-offset-reset=earliest"})
+@SpringBootTest(properties = {"spring.kafka.consumer.auto-offset-reset=earliest"}, classes= StockApp.class)
 @EmbeddedKafka(topics = {"stock-orders"},
         partitions = 1,
         bootstrapServersProperty = "spring.kafka.bootstrap-servers")
@@ -41,7 +40,7 @@ public class StockComponentTests {
     @Autowired
     private KafkaTemplate<Long, Order> template;
     @Autowired
-    private ConsumerFactory<Long, Order> factory;
+    private ConsumerFactory<Long,Order> factory;
     @Autowired
     ProductRepository repository;
 

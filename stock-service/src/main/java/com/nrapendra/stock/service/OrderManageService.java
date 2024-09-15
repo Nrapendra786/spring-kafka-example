@@ -1,12 +1,13 @@
-package pl.piomin.stock.service;
+package com.nrapendra.stock.service;
 
+import com.nrapendra.base.domain.Order;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-import pl.piomin.base.domain.Order;
-import pl.piomin.stock.domain.Product;
-import pl.piomin.stock.repository.ProductRepository;
+
+import com.nrapendra.stock.domain.Product;
+import com.nrapendra.stock.repository.ProductRepository;
 
 @Service
 public class OrderManageService {

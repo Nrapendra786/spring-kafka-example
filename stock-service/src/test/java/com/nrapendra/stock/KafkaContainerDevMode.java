@@ -12,7 +12,8 @@ public class KafkaContainerDevMode {
     @Bean
     @ServiceConnection
     public KafkaContainer kafka() {
-        return new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:7.4.0"))
+        //user can switch between cp-kafka:7.4.0  and cp-kafka:latest
+        return new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:latest"))
                 .withKraft()
                 .withReuse(true);
     }
