@@ -1,5 +1,10 @@
 package com.nrapendra.base.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class Order {
     private Long id;
     private Long customerId;
@@ -26,62 +31,6 @@ public class Order {
         this.productCount = productCount;
         this.price = price;
         this.status = "NEW";
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
-    }
-
-    public Long getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getSource() {
-        return source;
-    }
-
-    public void setSource(String source) {
-        this.source = source;
-    }
-
-    public int getProductCount() {
-        return productCount;
-    }
-
-    public void setProductCount(int productCount) {
-        this.productCount = productCount;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
     }
 
     @Override

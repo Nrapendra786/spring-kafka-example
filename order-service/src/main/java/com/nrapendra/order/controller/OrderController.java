@@ -1,4 +1,4 @@
-package pl.piomin.order.controller;
+package com.nrapendra.order.controller;
 
 import com.nrapendra.base.domain.Order;
 import org.apache.kafka.streams.StoreQueryParameters;
@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.config.StreamsBuilderFactoryBean;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
-import pl.piomin.order.service.OrderGeneratorService;
+import com.nrapendra.order.service.OrderGeneratorService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,10 +21,10 @@ import java.util.concurrent.atomic.AtomicLong;
 public class OrderController {
 
     private static final Logger LOG = LoggerFactory.getLogger(OrderController.class);
-    private AtomicLong id = new AtomicLong();
-    private KafkaTemplate<Long, Order> template;
-    private StreamsBuilderFactoryBean kafkaStreamsFactory;
-    private OrderGeneratorService orderGeneratorService;
+    private final AtomicLong id = new AtomicLong();
+    private final KafkaTemplate<Long, Order> template;
+    private final StreamsBuilderFactoryBean kafkaStreamsFactory;
+    private final OrderGeneratorService orderGeneratorService;
 
     public OrderController(KafkaTemplate<Long, Order> template,
                            StreamsBuilderFactoryBean kafkaStreamsFactory,

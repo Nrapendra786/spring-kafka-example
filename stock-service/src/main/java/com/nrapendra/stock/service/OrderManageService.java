@@ -1,19 +1,17 @@
 package com.nrapendra.stock.service;
 
 import com.nrapendra.base.domain.Order;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.nrapendra.stock.domain.Product;
+import com.nrapendra.stock.repository.ProductRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
-import com.nrapendra.stock.domain.Product;
-import com.nrapendra.stock.repository.ProductRepository;
-
 @Service
+@Slf4j
 public class OrderManageService {
 
     private static final String SOURCE = "stock";
-    private static final Logger LOG = LoggerFactory.getLogger(OrderManageService.class);
     private ProductRepository repository;
     private KafkaTemplate<Long, Order> template;
 
@@ -24,7 +22,7 @@ public class OrderManageService {
 
     public void reserve(Order order) {
         Product product = repository.findById(order.getProductId()).orElseThrow();
-        LOG.info("Found: {}", product);
+        log.info("Found: {}", product);
         if (order.getStatus().equals("NEW")) {
             if (order.getProductCount() < product.getAvailableItems()) {
                 product.setReservedItems(product.getReservedItems() + order.getProductCount());
@@ -35,13 +33,13 @@ public class OrderManageService {
                 order.setStatus("REJECT");
             }
             template.send("stock-orders", order.getId(), order);
-            LOG.info("Sent: {}", order);
+            log.info("Sent: {}", order);
         }
     }
 
     public void confirm(Order order) {
         Product product = repository.findById(order.getProductId()).orElseThrow();
-        LOG.info("Found: {}", product);
+        log.info("Found: {}", product);
         if (order.getStatus().equals("CONFIRMED")) {
             product.setReservedItems(product.getReservedItems() - order.getProductCount());
             repository.save(product);

@@ -14,8 +14,8 @@ public class OrderManageService {
 
     private static final String SOURCE = "payment";
     private static final Logger LOG = LoggerFactory.getLogger(OrderManageService.class);
-    private CustomerRepository repository;
-    private KafkaTemplate<Long, Order> template;
+    private final CustomerRepository repository;
+    private final KafkaTemplate<Long, Order> template;
 
     public OrderManageService(CustomerRepository repository, KafkaTemplate<Long, Order> template) {
         this.repository = repository;

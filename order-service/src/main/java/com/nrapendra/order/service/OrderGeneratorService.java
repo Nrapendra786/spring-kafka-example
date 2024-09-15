@@ -1,4 +1,4 @@
-package pl.piomin.order.service;
+package com.nrapendra.order.service;
 
 import com.nrapendra.base.domain.Order;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -13,13 +13,11 @@ import java.util.concurrent.atomic.AtomicLong;
 @Service
 public class OrderGeneratorService {
 
-    private static Random RAND = new Random();
-    private AtomicLong id = new AtomicLong();
-    private Executor executor;
-    private KafkaTemplate<Long, Order> template;
+    private static final Random RAND = new Random();
+    private final AtomicLong id = new AtomicLong();
+    private final KafkaTemplate<Long, Order> template;
 
     public OrderGeneratorService(Executor executor, KafkaTemplate<Long, Order> template) {
-        this.executor = executor;
         this.template = template;
     }
 
