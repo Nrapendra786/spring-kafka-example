@@ -3,7 +3,7 @@ This is a sample project developed using Java, Spring Boot 3.+ version and Apach
 ## Articles
 This repository is used as the example for the following articles:
 1. [Distributed Transactions in Microservices with Kafka Streams and Spring Boot](https://piotrminkowski.com/2022/01/24/distributed-transactions-in-microservices-with-kafka-streams-and-spring-boot/) - how to implement distributed transaction based on the SAGA pattern with Spring Boot and Kafka Streams
-2. [Deep Dive into Saga Transactions with Kafka Streams and Spring Boot](https://piotrminkowski.com/2022/02/07/deep-dive-into-saga-transactions-with-kafka-streams-and-spring-boot/) - how to implement distributed transaction based on the SAGA pattern with Spring Boot and fully Kafka Streams `KStream` and `KTable`. You need to switch to the [streams-full](https://github.com/Nrapendra786/sample-spring-kafka-microservices/tree/streams-full) branch.
+2. [Deep Dive into Saga Transactions with Kafka Streams and Spring Boot](https://piotrminkowski.com/2022/02/07/deep-dive-into-saga-transactions-with-kafka-streams-and-spring-boot/) - how to implement distributed transaction based on the SAGA pattern with Spring Boot and fully Kafka Streams `KStream` and `KTable`. You need to switch to the [streams-full](https://github.com/piomin/sample-spring-kafka-microservices/tree/streams-full) branch.
 
 ## Description
 There are three microservices: \
