@@ -1,4 +1,4 @@
-package pl.piomin.payment;
+package com.nrapendra.payment;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;

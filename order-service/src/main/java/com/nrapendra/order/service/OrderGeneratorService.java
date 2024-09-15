@@ -1,9 +1,10 @@
 package pl.piomin.order.service;
 
+import com.nrapendra.base.domain.Order;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-import pl.piomin.base.domain.Order;
+
 
 import java.util.Random;
 import java.util.concurrent.Executor;

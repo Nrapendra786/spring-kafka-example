@@ -1,5 +1,6 @@
-package pl.piomin.order;
+package com.nrapendra.order;
 
+import com.nrapendra.base.domain.Order;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.StreamsBuilder;
@@ -17,15 +18,10 @@ import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.kafka.support.serializer.JsonSerde;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
-import pl.piomin.base.domain.Order;
-import pl.piomin.order.controller.OrderController;
-import pl.piomin.order.service.OrderGeneratorService;
-import pl.piomin.order.service.OrderManageService;
+import com.nrapendra.order.service.*;
 
 import java.time.Duration;
-import java.util.Random;
 import java.util.concurrent.Executor;
-import java.util.concurrent.atomic.AtomicLong;
 
 @SpringBootApplication
 @EnableKafkaStreams

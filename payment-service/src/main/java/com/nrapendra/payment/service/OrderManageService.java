@@ -1,12 +1,13 @@
-package pl.piomin.payment.service;
+package com.nrapendra.payment.service;
 
+import com.nrapendra.base.domain.Order;
+import com.nrapendra.payment.domain.Customer;
+import com.nrapendra.payment.repository.CustomerRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-import pl.piomin.base.domain.Order;
-import pl.piomin.payment.domain.Customer;
-import pl.piomin.payment.repository.CustomerRepository;
+
 
 @Service
 public class OrderManageService {

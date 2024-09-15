@@ -1,5 +1,9 @@
-package pl.piomin.payment;
+package com.nrapendra.payment;
 
+import com.nrapendra.base.domain.Order;
+import com.nrapendra.payment.domain.Customer;
+import com.nrapendra.payment.repository.CustomerRepository;
+import com.nrapendra.payment.service.OrderManageService;
 import jakarta.annotation.PostConstruct;
 import net.datafaker.Faker;
 import org.slf4j.Logger;
@@ -9,10 +13,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.annotation.KafkaListener;
-import pl.piomin.base.domain.Order;
-import pl.piomin.payment.domain.Customer;
-import pl.piomin.payment.repository.CustomerRepository;
-import pl.piomin.payment.service.OrderManageService;
+
 
 import java.util.Random;
 

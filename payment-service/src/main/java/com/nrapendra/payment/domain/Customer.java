@@ -1,4 +1,4 @@
-package pl.piomin.payment.domain;
+package com.nrapendra.payment.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

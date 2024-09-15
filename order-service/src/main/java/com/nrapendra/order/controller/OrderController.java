@@ -1,5 +1,6 @@
 package pl.piomin.order.controller;
 
+import com.nrapendra.base.domain.Order;
 import org.apache.kafka.streams.StoreQueryParameters;
 import org.apache.kafka.streams.state.KeyValueIterator;
 import org.apache.kafka.streams.state.QueryableStoreTypes;
@@ -9,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.config.StreamsBuilderFactoryBean;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
-import pl.piomin.base.domain.Order;
 import pl.piomin.order.service.OrderGeneratorService;
 
 import java.util.ArrayList;

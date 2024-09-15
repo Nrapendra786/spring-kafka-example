@@ -1,9 +1,8 @@
-package pl.piomin.order.service;
+package com.nrapendra.order.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
+import com.nrapendra.base.domain.Order;
 import org.springframework.stereotype.Service;
-import pl.piomin.base.domain.Order;
+
 
 @Service
 public class OrderManageService {

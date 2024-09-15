@@ -1,4 +1,4 @@
-package pl.piomin.base.domain;
+package com.nrapendra.base.domain;
 
 public class Order {
     private Long id;

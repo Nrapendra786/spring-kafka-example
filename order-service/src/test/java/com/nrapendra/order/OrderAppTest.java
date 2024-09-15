@@ -1,4 +1,4 @@
-package pl.piomin.order;
+package com.nrapendra.order;
 
 import org.springframework.boot.SpringApplication;
 

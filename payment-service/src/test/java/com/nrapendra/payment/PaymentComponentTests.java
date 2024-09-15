@@ -1,6 +1,9 @@
-package pl.piomin.payment;
+package com.nrapendra.payment;
 
 
+import com.nrapendra.base.domain.Order;
+import com.nrapendra.payment.domain.Customer;
+import com.nrapendra.payment.repository.CustomerRepository;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
@@ -14,9 +17,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.kafka.test.EmbeddedKafkaBroker;
 import org.springframework.kafka.test.context.EmbeddedKafka;
-import pl.piomin.base.domain.Order;
-import pl.piomin.payment.domain.Customer;
-import pl.piomin.payment.repository.CustomerRepository;
+
 
 import java.time.Duration;
 import java.util.concurrent.ExecutionException;
@@ -28,8 +29,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(properties = {"spring.kafka.consumer.auto-offset-reset=earliest"})
 @EmbeddedKafka(topics = {"payment-orders"},
-               partitions = 1,
-               bootstrapServersProperty = "spring.kafka.bootstrap-servers")
+        partitions = 1,
+        bootstrapServersProperty = "spring.kafka.bootstrap-servers")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class PaymentComponentTests {
 
