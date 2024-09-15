@@ -1,4 +1,8 @@
 Please Note:  Inspiration of the Project is (https://github.com/piomin/sample-spring-kafka-microservices/tree/streams-full), I created this project only for learning purpose.
+# Analysis is done on 
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=nrapendra786_https-github-com-nrapendra786-spring-kafka-example)
+
+
 # Microservices with Spring Boot and Kafka Sample Project 
 This is a sample project developed using Java, Spring Boot 3.+ version and Apache Kafka
 ## Articles
